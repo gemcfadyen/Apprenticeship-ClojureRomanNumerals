@@ -9,5 +9,6 @@
           (it "converts 5 to V"
               (should= "V" (converts 5)))
 
-
+          (it "converts 10 to X"
+              (should= "X" (converts 10)))
           )
