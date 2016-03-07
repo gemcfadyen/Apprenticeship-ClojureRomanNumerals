@@ -18,6 +18,8 @@
           (it "converts 3 to III"
               (should= "III" (converts 3)))
 
+          (it "converts 6 to VI"
+              (should= "VI" (converts 6)))
 
           )
 

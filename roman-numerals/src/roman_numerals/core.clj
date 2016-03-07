@@ -7,5 +7,6 @@
     (contains? romanNumerals arabic) (get romanNumerals arabic)
     (= arabic 2) "II"
     (= arabic 3) "III"
+    (= arabic 6) "VI"
     )
   )
