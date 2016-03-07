@@ -1,5 +1,7 @@
 (ns roman-numerals.core)
 
 (defn converts [arabic]
-"I"
+  (if (= 1 arabic)
+    "I"
+    "V")
   )
