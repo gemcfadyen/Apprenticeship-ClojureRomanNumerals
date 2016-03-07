@@ -1,18 +1,11 @@
 (ns roman-numerals.core)
-
 (def arabics [1000 900 100 90 50 10 9 5 4 1])
 (def romans ["M" "CM" "C" "XC" "L" "X" "IX" "V" "IV" "I"])
-
 
 (defn- join [result item]
   (str result item))
 
-(defn- first-item [collection]
-  (first collection)
-  )
-
 (defn- calculate [result arabic romans arabics]
-
   (if (= 0 arabic)
     result
 
@@ -26,8 +19,8 @@
     ;; skip onto the next entry in arabics
     ;; call calculate result arabic tail-of romans, tail-of arabics
 
-    (if (>= arabic (first-item arabics))
-      (calculate (join result (first-item romans)) (- arabic (first-item arabics)) romans arabics)
+    (if (>= arabic (first arabics))
+      (calculate (join result (first romans)) (- arabic (first arabics)) romans arabics)
       (calculate result arabic (rest romans) (rest arabics)))))
 
 
