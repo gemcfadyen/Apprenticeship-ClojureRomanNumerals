@@ -15,6 +15,9 @@
           (it "converts 1 to II"
               (should= "II" (converts 2)))
 
+          (it "converts 3 to III"
+              (should= "III" (converts 3)))
+
 
           )
 
