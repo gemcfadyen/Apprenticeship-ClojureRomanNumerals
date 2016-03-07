@@ -1,12 +1,9 @@
 (ns roman-numerals.core)
 
-(def arabics [10 5 1 ])
-(def romans ["X" "V" "I"])
+(def arabics [10 5 4 1 ])
+(def romans ["X" "V" "IV" "I"])
 
 (defn- calculate [result arabic romans arabics]
-  (print "calculating with ")
-  (print result)
-  (print arabic)
 
   (if (= 0 arabic)
     result
@@ -22,9 +19,6 @@
     ;; else
     ;; skip onto the next entry in arabics
     ;; call calculate result arabic tail-of romans, tail-of arabics
-
-
-    ;;(calculate (conj result "W") (- (decimal 1)))
     ))
 
 

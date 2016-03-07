@@ -21,6 +21,9 @@
           (it "converts 6 to VI"
               (should= "VI" (converts 6)))
 
+          (it "converts 4 to IV"
+              (should= "IV" (converts 4)))
+
           )
 
 
