@@ -3,6 +3,14 @@
 (def arabics [1000 900 100 90 50 10 9 5 4 1])
 (def romans ["M" "CM" "C" "XC" "L" "X" "IX" "V" "IV" "I"])
 
+
+(defn- join [result item]
+  (str result item))
+
+(defn- first-item [collection]
+  (first collection)
+  )
+
 (defn- calculate [result arabic romans arabics]
 
   (if (= 0 arabic)
@@ -18,43 +26,10 @@
     ;; skip onto the next entry in arabics
     ;; call calculate result arabic tail-of romans, tail-of arabics
 
-    (if (>= arabic (first arabics))
-      (calculate (str result (first romans)) (- arabic (first arabics)) romans arabics)
-      (calculate result arabic (rest romans) (rest arabics)))
-
-    ))
+    (if (>= arabic (first-item arabics))
+      (calculate (join result (first-item romans)) (- arabic (first-item arabics)) romans arabics)
+      (calculate result arabic (rest romans) (rest arabics)))))
 
 
 (defn converts [arabic]
-  (calculate "" arabic romans arabics)
-  )
-
-
-(defn xcalculate [tuple roman-result input]
-  (if (>= input (key tuple))
-    (conj roman-result (val tuple))
-    (conj roman-result "")
-    )
-  )
-
-(defn xconverts [arabic]
-  (reduce
-    (fn [roman-results decimal-val]
-      (map
-        (fn [a]
-          (if (>= decimal-val (key a))
-            (conj roman-results (val a))
-            (conj roman-results "")
-            ))) ) [""] [arabic])
-
-
-
-  ;;  (cond
-  ;;    (contains? romanNumerals arabic) (get romanNumerals arabic)
-  ;;    (= arabic 2) "II"
-  ;;    (= arabic 3) "III"
-  ;;    (= arabic 6) "VI"
-  ;;   )
-  )
-
-
+  (calculate "" arabic romans arabics))
