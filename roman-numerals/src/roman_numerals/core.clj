@@ -3,12 +3,15 @@
 (def romans ["M" "CM" "C" "XC" "L" "X" "IX" "V" "IV" "I"])
 
 (defn- calculate [result arabic romans arabics]
-  (if (= 0 arabic)
-    result
+  (let [[roman-head & roman-tail] romans
+        [arabic-head & arabic-tail] arabics]
 
-    (if (>= arabic (first arabics))
-      (calculate (str result (first romans)) (- arabic (first arabics)) romans arabics)
-      (calculate result arabic (rest romans) (rest arabics)))))
+    (if (= 0 arabic)
+      result
+
+      (if (>= arabic arabic-head)
+        (calculate (str result roman-head) (- arabic arabic-head) romans arabics)
+        (calculate result arabic roman-tail arabic-tail)))))
 
 (defn convert [arabic]
   (calculate "" arabic romans arabics))
