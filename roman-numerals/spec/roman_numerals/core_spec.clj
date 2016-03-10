@@ -4,47 +4,47 @@
 
 (describe "Roman Numeral Converter"
           (it "converts 0 to empty string"
-              (should= "" (converts 0)))
+              (should= "" (convert 0)))
 
           (it "converts 1 to I"
-              (should= "I" (converts 1)))
+              (should= "I" (convert 1)))
 
           (it "converts 2 to II"
-              (should= "II" (converts 2)))
+              (should= "II" (convert 2)))
 
           (it "converts 3 to III"
-              (should= "III" (converts 3)))
+              (should= "III" (convert 3)))
 
           (it "converts 4 to IV"
-              (should= "IV" (converts 4)))
+              (should= "IV" (convert 4)))
 
           (it "converts 5 to V"
-              (should= "V" (converts 5)))
+              (should= "V" (convert 5)))
 
           (it "converts 6 to VI"
-              (should= "VI" (converts 6)))
+              (should= "VI" (convert 6)))
 
           (it "converts 9 to IX"
-              (should= "IX" (converts 9)))
+              (should= "IX" (convert 9)))
 
           (it "converts 10 to X"
-              (should= "X" (converts 10)))
+              (should= "X" (convert 10)))
 
           (it "converts 50 to L"
-              (should= "L" (converts 50)))
+              (should= "L" (convert 50)))
 
           (it "converts 90 to XC"
-              (should= "XC" (converts 90)))
+              (should= "XC" (convert 90)))
 
           (it "converts 100 to C"
-              (should= "C" (converts 100)))
+              (should= "C" (convert 100)))
 
           (it "converts 900 to CM"
-              (should= "CM" (converts 900)))
+              (should= "CM" (convert 900)))
 
           (it "converts 1000 to M"
-              (should= "M" (converts 1000)))
+              (should= "M" (convert 1000)))
 
           (it "converts 3999 to MMMCMXCIX"
-              (should= "MMMCMXCIX" (converts 3999)))
+              (should= "MMMCMXCIX" (convert 3999)))
           )
